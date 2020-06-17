@@ -50,6 +50,8 @@ var stompClient;
 function connectNameTopic() {
     stompClient = Stomp.client('ws://' + hostPath + contextPath + 'ws-entry-point');
     stompClient.reconnect_delay = 5000;
+	stompClient.heartbeat.incoming = 4000;
+    stompClient.heartbeat.outgoing = 4000;
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/name', function (message) {
