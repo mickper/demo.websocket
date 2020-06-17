@@ -1,0 +1,19 @@
+#Configuration tomcat
+server:
+  servlet:
+    contextPath: /demo-websocket
+  port: 80
+
+#Configuration du niveau des logs
+logging:
+  level:
+    root: DEBUG
+
+#Configuration JSP
+spring:
+  resources:
+    static-locations: /WEB-INF/
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
